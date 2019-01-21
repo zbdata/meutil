@@ -1,0 +1,33 @@
+version: '2'
+
+# Named volumes
+volumes:
+  # MySQL Data
+  meutil-mysql-data:
+    driver: local
+
+services:
+  # MySQL (5.7)
+  mysql:
+    image: mysql:5.7
+    container_name: meutil-mysql
+    volumes:
+      - meutil-mysql-data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=meutil
+      - MYSQL_DATABASE=meutil
+      - MYSQL_USER=meutil
+      - MYSQL_PASSWORD=meutil
+
+  # PHP (with Nginx)
+  app:
+    image: ambientum/php:7.2-nginx
+    container_name: meutil-app
+    volumes:
+      - ../..:/var/www/app
+    ports:
+      - "86:8080"
+    links:
+      - mysql
