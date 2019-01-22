@@ -14,9 +14,9 @@
                 class="btn btn-warning">
             Edit
         </router-link>
-
+        
         <button
-                v-if="$can(xprops.permission_prefix + 'delete')"
+                v-if="$can(xprops.permission_prefix + 'delete' || row.id != '')"
                 @click="destroyData(row.id)"
                 type="button"
                 class="btn btn-danger">

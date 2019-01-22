@@ -9,7 +9,7 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">List</h3>
+                            <h3 class="box-title">Registros de entrada e saída</h3>
                         </div>
 
                         <div class="box-body">
@@ -66,17 +66,17 @@ export default {
     data() {
         return {
             columns: [
-                //{ title: '#', field: 'id', sortable: true, colStyle: 'width: 50px;' },
+                { title: '#', field: 'id', visible: false, colStyle: 'width: 50px;' },
                 { title: 'Data', field: 'data'},
                 { title: 'Entrada', field: 'entrada' },
                 { title: 'Saida', field: 'saida' },
                 { title: 'No dia', field: '' },
                 { title: 'Falta', field: 'falta', tdComp: DatatableCheckbox, colStyle: 'width: 50px;' },
                 { title: 'Feriado', field: 'feriado', tdComp: DatatableCheckbox, colStyle: 'width: 50px;' },
-                //{ title: 'Matricula', field: 'matricula', tdComp: DatatableSingle },
+                { title: 'Matricula', field: 'matricula', visible: false, tdComp: DatatableSingle },
                 { title: 'Actions', tdComp: DatatableActions, visible: true, thClass: 'text-right', tdClass: 'text-right', colStyle: 'width: 130px;' }
             ],
-            query: { sort: 'id', order: 'desc' },
+            query: { sort: 'data', order: 'asc' },
             xprops: {
                 module: 'ControleDoPontosIndex',
                 route: 'controle_do_pontos',

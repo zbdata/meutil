@@ -17,7 +17,8 @@ class ControleDoPontosController extends Controller
 {
     public function index()
     {
-        $end = "http://192.168.1.103:86/ponto";
+        //$end = "http://192.168.1.103:86/ponto";
+        $end = "http://192.168.56.1:85/api/dot/1815441/20190101/20190131";
         $client = new Client();
         $registros = $client->request('GET', $end);
         $registros = $registros->getBody();
@@ -27,7 +28,7 @@ class ControleDoPontosController extends Controller
 
         $ponto['data'] = [];
 
-        foreach($registros as $key_reg=>$value_reg){
+        foreach ($registros as $key_reg => $value_reg) {
             array_push($ponto['data'], 
                                 ['id' => '',
                                 'data' => $value_reg['data'],
@@ -44,18 +45,18 @@ class ControleDoPontosController extends Controller
         foreach ($faltas as $falta) {
             if($falta){
                 foreach ($falta as $key_falta=>$value_falta){
-                    foreach($ponto['data'] as $key_ponto=>$value_ponto){
+                    foreach ($ponto['data'] as $key_ponto => $value_ponto) {
                         if ($value_falta['data'] == $value_ponto['data']){
-                            array_add($ponto['data'], $key_ponto, $value_falta);
+                            //data_set($ponto['data'], $key_ponto, $value_falta);
+                            array_pull($ponto['data'], $key_ponto);
                         }
-                    }               
-                    //array_push($ponto['data'], $value_falta);
-                };
+                    }
+                    array_push($ponto['data'], $value_falta);
+                }
             }
         };
 
-        //print_r ($ponto['data']);
-
+        $ponto['data'] = array_values($ponto['data']);
         return json_encode($ponto);
         //return new ControleDoPontoResource(ControleDoPonto::with(['matricula'])->get());
     }

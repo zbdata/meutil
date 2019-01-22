@@ -713,12 +713,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            columns: [
-            //{ title: '#', field: 'id', sortable: true, colStyle: 'width: 50px;' },
-            { title: 'Data', field: 'data' }, { title: 'Entrada', field: 'entrada' }, { title: 'Saida', field: 'saida' }, { title: 'No dia', field: '' }, { title: 'Falta', field: 'falta', tdComp: __WEBPACK_IMPORTED_MODULE_4__dtmodules_DatatableCheckbox___default.a, colStyle: 'width: 50px;' }, { title: 'Feriado', field: 'feriado', tdComp: __WEBPACK_IMPORTED_MODULE_4__dtmodules_DatatableCheckbox___default.a, colStyle: 'width: 50px;' },
-            //{ title: 'Matricula', field: 'matricula', tdComp: DatatableSingle },
-            { title: 'Actions', tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a, visible: true, thClass: 'text-right', tdClass: 'text-right', colStyle: 'width: 130px;' }],
-            query: { sort: 'id', order: 'desc' },
+            columns: [{ title: '#', field: 'id', visible: false, colStyle: 'width: 50px;' }, { title: 'Data', field: 'data' }, { title: 'Entrada', field: 'entrada' }, { title: 'Saida', field: 'saida' }, { title: 'No dia', field: '' }, { title: 'Falta', field: 'falta', tdComp: __WEBPACK_IMPORTED_MODULE_4__dtmodules_DatatableCheckbox___default.a, colStyle: 'width: 50px;' }, { title: 'Feriado', field: 'feriado', tdComp: __WEBPACK_IMPORTED_MODULE_4__dtmodules_DatatableCheckbox___default.a, colStyle: 'width: 50px;' }, { title: 'Matricula', field: 'matricula', visible: false, tdComp: __WEBPACK_IMPORTED_MODULE_2__dtmodules_DatatableSingle___default.a }, { title: 'Actions', tdComp: __WEBPACK_IMPORTED_MODULE_1__dtmodules_DatatableActions___default.a, visible: true, thClass: 'text-right', tdClass: 'text-right', colStyle: 'width: 130px;' }],
+            query: { sort: 'data', order: 'asc' },
             xprops: {
                 module: 'ControleDoPontosIndex',
                 route: 'controle_do_pontos',
@@ -2517,7 +2513,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.row-alert[data-v-15a01839] {\n    padding: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.row-alert[data-v-15a01839] {\r\n    padding: 10px;\n}\r\n", ""]);
 
 // exports
 
@@ -24229,7 +24225,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "box-header with-border" }, [
-      _c("h3", { staticClass: "box-title" }, [_vm._v("List")])
+      _c("h3", { staticClass: "box-title" }, [
+        _vm._v("Registros de entrada e saída")
+      ])
     ])
   },
   function() {
@@ -24530,7 +24528,7 @@ var render = function() {
           )
         : _vm._e(),
       _vm._v(" "),
-      _vm.$can(_vm.xprops.permission_prefix + "delete")
+      _vm.$can(_vm.xprops.permission_prefix + "delete" || _vm.row.id != "")
         ? _c(
             "button",
             {
@@ -25600,7 +25598,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("108d20f2", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("8773fa00", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25627,7 +25625,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("34065d7e", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("b3310c6a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25654,7 +25652,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("b312e562", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("e9c2b356", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25681,7 +25679,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("c2535e7e", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("90d4dc18", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25708,7 +25706,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("66b37a3d", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("a96de7e0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25735,7 +25733,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("22b1262e", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("b17bc7e0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25762,7 +25760,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("53cca1aa", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("0c6750d1", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25789,7 +25787,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("54b0b680", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("23a1f1a7", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25816,7 +25814,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("6f60083a", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("164a48ca", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25843,7 +25841,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("a2de189a", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("1fe043ac", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25870,7 +25868,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("60da700a", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("e94d2afe", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25897,7 +25895,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("3e13524b", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("3d3c3778", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25924,7 +25922,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("0fbe3bf8", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("0672a4de", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25951,7 +25949,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("59c23118", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("d134fe4a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25978,7 +25976,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("7f53df41", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("2faee6fb", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26005,7 +26003,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("9a3bbe9c", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("ce543db6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26032,7 +26030,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("7bc8794c", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("6c7a739a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26059,7 +26057,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("c2e5d470", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("62d3af2f", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26086,7 +26084,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("327ea44f", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("b8641770", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26113,7 +26111,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("df19ab86", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("9082776c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26140,7 +26138,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("06c18f8c", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("4a998521", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26167,7 +26165,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("554f68e3", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("2255448a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26194,7 +26192,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("4bb3e8ad", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("b28c4f9a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26221,7 +26219,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("566c48d6", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("24edc670", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26248,7 +26246,7 @@ var content = __webpack_require__("./node_modules/css-loader/index.js!./node_mod
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("709087fc", content, false, {});
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("abb57d6e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
