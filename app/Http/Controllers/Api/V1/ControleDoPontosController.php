@@ -22,8 +22,8 @@ class ControleDoPontosController extends Controller
         $user = auth('api')->user();
         $matricula = $user['matricula'];
 
-        //$end = "http://192.168.1.103:86/ponto";
-        $end = "http://10.209.63.76:85/api/dot/$matricula/20190101/20190131";
+        $end = "http://192.168.0.3:86/ponto";
+        //$end = "http://10.209.63.76:85/api/dot/$matricula/20190101/20190131";
         $client = new Client();
         $registros = $client->request('GET', $end);
         $registros = $registros->getBody();
@@ -65,6 +65,7 @@ class ControleDoPontosController extends Controller
                 }
             }
         };
+        array_push($ponto['data'], ['saldo'=>'15']);
         
         $ponto['data'] = array_values($ponto['data']);
         return json_encode($ponto);
@@ -101,6 +102,11 @@ class ControleDoPontosController extends Controller
                         'saldo_dia'=> '00:00:00'];
         }
         return $saldo;
+    }
+
+    public function horas_mes($ponto){
+
+
     }
 
     public function show($id)

@@ -1,7 +1,26 @@
 <template>
     <section class="content-wrapper" style="min-height: 960px;">
         <section class="content-header">
-            <h1>Controle do ponto</h1>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="info-box bg-green">
+                    <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+
+                    <div class="info-box-content">
+                    <span class="info-box-text">Saldo do Mês</span>
+                    <span class="info-box-number">{{getSaldo()}}</span>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                        <span class="progress-description">
+                            70% já completados de 30 Dias
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+        <!-- /.info-box -->
+            </div>
+            
         </section>
 
         <section class="content">
@@ -105,6 +124,9 @@ export default {
     },
     methods: {
         ...mapActions('ControleDoPontosIndex', ['fetchData', 'setQuery', 'resetState']),
+        getSaldo: function(){  
+            return this.$data.saldo;
+        }
     }
 }
 </script>
